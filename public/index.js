@@ -10,9 +10,10 @@ const renderPage = () => {
   main.appendChild(routes[page]);
 };
 
-const validateHash = (hash) => hash === "" ? "login" : hash.replace("#", "");
+const validateHash = (hash) => (hash === "" ? "login" : hash.replace("#", ""));
 
 window.addEventListener("load", () => {
+  event.preventDefault();
   renderPage();
   init();
 });
